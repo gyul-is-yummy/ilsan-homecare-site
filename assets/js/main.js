@@ -14,7 +14,7 @@ const PHONE_CONTACTS={
   main:{label:'대표전화',number:SITE.phone},
   sub:{label:'센터전화',number:SITE.secondaryPhone}
 };
-const navItems=[['index.html','센터 홈','home'],['center.html','센터소개','center'],['services.html','서비스안내','services'],['long-term-care.html','장기요양등급안내','care'],['guide.html','이용안내','guide'],['contact.html','상담문의','contact']];
+const navItems=[['center.html','센터소개','center'],['services.html','서비스안내','services'],['long-term-care.html','장기요양등급안내','care'],['guide.html','이용안내','guide'],['contact.html','상담문의','contact']];
 function telHref(number){return `tel:${number.replaceAll('-','')}`}
 function phoneContact(key){return PHONE_CONTACTS[key]||PHONE_CONTACTS.main}
 function renderPhoneRows(){return Object.values(PHONE_CONTACTS).map(({label,number})=>`<div class="phone-row"><span>${label}</span><strong><a href="${telHref(number)}">${number}</a></strong></div>`).join('')}
